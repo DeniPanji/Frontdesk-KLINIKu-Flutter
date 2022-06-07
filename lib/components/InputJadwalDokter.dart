@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontdesk_kliniku/color.dart';
+import 'package:frontdesk_kliniku/components/JadwalDokter.dart';
+import 'package:frontdesk_kliniku/components/ListPasien.dart';
 import 'package:frontdesk_kliniku/components/reuse.dart';
 
 class InputJadwalDokter extends StatefulWidget {
@@ -68,9 +70,42 @@ class Input_JadwalDokterState extends State<InputJadwalDokter> {
     );
 
     final listJadwalBtn = ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => JadwalDokter()),
+        );
+      },
       child: Text(
-        'List Jadwal',
+        'Jadwal Dokter',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+      style: ButtonStyle(
+        overlayColor: MaterialStateProperty.all(Colors.blue[800]),
+        backgroundColor: MaterialStateProperty.all(Colors.blue),
+        foregroundColor: MaterialStateProperty.all(Colors.white),
+        minimumSize: MaterialStateProperty.all(const Size(200, 40)),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+        ),
+      ),
+    );
+
+    final pasienBtn = ElevatedButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ListPasien()),
+        );
+      },
+      child: Text(
+        'Jadwal Pasien',
         style: TextStyle(
           color: Colors.white,
           fontSize: 20,
@@ -132,9 +167,11 @@ class Input_JadwalDokterState extends State<InputJadwalDokter> {
                     SizedBox(height: 20),
                     submitBtn,
                     SizedBox(height: 10),
+                    cancleBtn,
+                    SizedBox(height: 10),
                     listJadwalBtn,
                     SizedBox(height: 10),
-                    cancleBtn,
+                    pasienBtn,
                   ],
                 ),
               ),
