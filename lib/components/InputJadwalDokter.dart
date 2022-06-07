@@ -21,39 +21,70 @@ class Input_JadwalDokterState extends State<InputJadwalDokter> {
 
   @override
   Widget build(BuildContext context) {
-    final submitBtn = Material(
-      elevation: 5,
-      child: MaterialButton(
-        padding: EdgeInsets.symmetric(vertical: 10),
-        minWidth: 100,
-        height: 40,
-        color: darkerColor,
-        onPressed: () {},
-        child: Text(
-          "Submit",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.w500,
+    final submitBtn = ElevatedButton(
+      onPressed: () {},
+      child: Text(
+        'Submit',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+      style: ButtonStyle(
+        overlayColor: MaterialStateProperty.all(darkerColor),
+        backgroundColor: MaterialStateProperty.all(primaryColor),
+        foregroundColor: MaterialStateProperty.all(Colors.white),
+        minimumSize: MaterialStateProperty.all(const Size(200, 40)),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
           ),
         ),
       ),
     );
 
-    final cancleBtn = Material(
-      elevation: 5,
-      child: MaterialButton(
-        padding: EdgeInsets.symmetric(vertical: 10),
-        minWidth: 100,
-        height: 40,
-        color: Colors.red[500],
-        onPressed: () {},
-        child: Text(
-          "Cancel",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.w200,
+    final cancleBtn = ElevatedButton(
+      onPressed: () {},
+      child: Text(
+        'Cancel',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+      style: ButtonStyle(
+        overlayColor: MaterialStateProperty.all(Colors.red[900]),
+        foregroundColor: MaterialStateProperty.all(Colors.white),
+        backgroundColor: MaterialStateProperty.all(Colors.red[400]),
+        minimumSize: MaterialStateProperty.all(const Size(200, 40)),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+        ),
+      ),
+    );
+
+    final listJadwalBtn = ElevatedButton(
+      onPressed: () {},
+      child: Text(
+        'List Jadwal',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+      style: ButtonStyle(
+        overlayColor: MaterialStateProperty.all(Colors.blue[800]),
+        backgroundColor: MaterialStateProperty.all(Colors.blue),
+        foregroundColor: MaterialStateProperty.all(Colors.white),
+        minimumSize: MaterialStateProperty.all(const Size(200, 40)),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
           ),
         ),
       ),
@@ -98,9 +129,11 @@ class Input_JadwalDokterState extends State<InputJadwalDokter> {
                     formTextField("Jam Kerja", _jamKerja),
                     SizedBox(height: 20),
                     formTextField("Kontak", _kontak),
-                    SizedBox(height: 30),
-                    submitBtn,
                     SizedBox(height: 20),
+                    submitBtn,
+                    SizedBox(height: 10),
+                    listJadwalBtn,
+                    SizedBox(height: 10),
                     cancleBtn,
                   ],
                 ),

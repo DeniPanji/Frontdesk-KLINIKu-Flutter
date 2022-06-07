@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontdesk_kliniku/color.dart';
 import 'package:frontdesk_kliniku/components/InputJadwalDokter.dart';
+import 'package:frontdesk_kliniku/components/JadwalDokter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(primary: primaryColor),
       ),
-      home: const InputJadwalDokter(),
+      home: const JadwalDokter(),
     );
   }
 }
